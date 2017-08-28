@@ -29,41 +29,42 @@ SOFTWARE.
 
 */
 
-#include "utils.h"
-#include "selection.h"
-#include "insertion.h"
-#include "merge.h"
+void merge(int* arr, int comeco, int meio, int fim){
+	int aux[fim-comeco+1];
+	int apontador1 = comeco, apontador2 = meio+1, apontadorAux = 0;
 
-//Main function
-int main(int argc, char *argv[]){
-
-	int tam_array = 10; //Array size definition.
-	int arr[10] = {8,5,2,6,9,3,1,4,0,7}; //Array definition.
-
-	printArray(arr, tam_array); //Print array before sorting.
-
-	//If the argument is selection, run selectionSort method.
-	if(!strcmp("selection", argv[1])){
-		printf("Running Selection Sort Algorithm......\n");
-		selectionSort(arr, tam_array); //Run SelectionSort method.
+	while(apontador1 <= meio && apontador2 <= fim){
+		if(arr[apontador2] < arr[apontador1]){
+			aux[apontadorAux] = arr[apontador2];
+			apontador2++;
+		}
+		else{
+			aux[apontadorAux] = arr[apontador1];
+			apontador1++;
+		}
+		apontadorAux++;
 	}
 
-	//If the argument is insertion, run insertionSort method.
-	else if(!strcmp("insertion", argv[1])){
-		printf("Running Insertion Sort Algorithm......\n");
-		insertionSort(arr, tam_array); //Run InsertionSort method.
+	while(apontador1<=meio){
+		aux[apontadorAux++] = arr[apontador1++];
 	}
 
-	else if(!strcmp("merge", argv[1])){
-		printf("Running Merge Sort Algorithm......\n");
-		mergeSort(arr, 0, tam_array-1);
+	while(apontador2<=fim){
+		aux[apontadorAux++] = arr[apontador2++];
 	}
 
-	//If not, a wrong argument was typed.
-	else{
-		printf("Invalid argument\n");
-		exit(1);
+	for(apontadorAux = comeco; apontadorAux<=fim; apontadorAux++){
+		arr[apontadorAux] = aux[apontadorAux-comeco];
 	}
 
-	printArray(arr, tam_array); //Print array after sorting.
+}
+
+void mergeSort(int* arr, int comeco, int fim){
+	if(comeco<fim){
+		printf("Comeco: %d, Fim: %d\n", comeco, fim);
+		int meio = (comeco+fim)/2; 
+		mergeSort(arr, comeco, meio);
+		mergeSort(arr, meio+1, fim);
+		merge(arr, comeco, meio, fim);
+	}
 }

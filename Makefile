@@ -8,3 +8,6 @@ selection:
 
 insertion:
 	./program insertion
+
+merge:
+	./program merge
