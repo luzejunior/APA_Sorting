@@ -31,7 +31,9 @@ SOFTWARE.
 
 void merge(int* arr, int comeco, int meio, int fim){
 	int aux[fim-comeco+1];
-	int apontador1 = comeco, apontador2 = meio+1, apontadorAux = 0;
+	int apontador1 = comeco;
+	int apontador2 = meio+1;
+	int apontadorAux = 0;
 
 	while(apontador1 <= meio && apontador2 <= fim){
 		if(arr[apontador2] < arr[apontador1]){
