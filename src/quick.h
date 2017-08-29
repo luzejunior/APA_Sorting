@@ -29,46 +29,36 @@ SOFTWARE.
 
 */
 
-#include "utils.h"
-#include "selection.h"
-#include "insertion.h"
-#include "merge.h"
-#include "quick.h"
+int quickSort(int* arr, int comeco, int fim){
+	int i = comeco;
+	int j = fim;
+	int pivo = arr[comeco];
+	int pindice = comeco;
 
-//Main function
-int main(int argc, char *argv[]){
+	printArray(arr, fim+1);
 
-	int tam_array = 10; //Array size definition.
-	int arr[10] = {8,5,2,6,9,3,1,4,0,7}; //Array definition.
+	while(i<j){
+		while(arr[j]>=pivo && i<j){
+			j--;
+		}
 
-	printArray(arr, tam_array); //Print array before sorting.
+		arr[pindice] = arr[j];
+		arr[j] = pivo;
+		pindice = j;
 
-	//If the argument is selection, run selectionSort method.
-	if(!strcmp("selection", argv[1])){
-		printf("Running Selection Sort Algorithm......\n");
-		selectionSort(arr, tam_array); //Run SelectionSort method.
+		while(arr[i]<pivo){
+			i++;
+		}
+		
+		if(pindice != i && i!=j){
+			arr[pindice] = arr[i];
+			arr[i] = pivo;
+			pindice = i;
+		}
 	}
 
-	//If the argument is insertion, run insertionSort method.
-	else if(!strcmp("insertion", argv[1])){
-		printf("Running Insertion Sort Algorithm......\n");
-		insertionSort(arr, tam_array); //Run InsertionSort method.
+	if(comeco<fim){
+		quickSort(arr, comeco, pindice-1);
+		quickSort(arr, pindice+1, fim);
 	}
-
-	else if(!strcmp("merge", argv[1])){
-		printf("Running Merge Sort Algorithm......\n");
-		mergeSort(arr, 0, tam_array-1);
-	}
-
-	else if(!strcmp("quick", argv[1])){
-		quickSort(arr, 0, tam_array-1);
-	}
-
-	//If not, a wrong argument was typed.
-	else{
-		printf("Invalid argument\n");
-		exit(1);
-	}
-
-	printArray(arr, tam_array); //Print array after sorting.
 }

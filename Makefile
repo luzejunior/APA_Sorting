@@ -11,3 +11,6 @@ insertion:
 
 merge:
 	./program merge
+
+quick:
+	./program quick
