@@ -1,6 +1,6 @@
 # APA_Sorting
 
-Here you can find simples sorting algorithms implementations using C language.
+Here you can find simple sorting algorithms implementations using C language.
 
 #### Version 1.0.0
  - Insertion Sort
