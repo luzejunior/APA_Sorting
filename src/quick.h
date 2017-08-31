@@ -32,7 +32,9 @@ int quickSort(int* arr, int comeco, int fim){
 	int pivo = arr[comeco];
 	int pindice = comeco;
 
-	printArray(arr, fim+1);
+	if(PRINT_FLAG){
+		printArray(arr, fim+1);
+	}
 
 	while(i<j){
 		while(arr[j]>=pivo && i<j){

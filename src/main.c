@@ -39,30 +39,37 @@ int main(int argc, char *argv[]){
 	int tam_array = 10; //Array size definition.
 	int arr[10] = {2,5,8,6,9,3,1,4,0,7}; //Array definition.
 
+	printf("Array before sorting...\n");
 	printArray(arr, tam_array); //Print array before sorting.
+	
 
 	//If the argument is selection, run selectionSort method.
 	if(!strcmp("selection", argv[1])){
-		printf("Running Selection Sort Algorithm......\n");
+		printf("\nRunning Selection Sort Algorithm......\n");
 		selectionSort(arr, tam_array); //Run SelectionSort method.
 	}
 
 	//If the argument is insertion, run insertionSort method.
 	else if(!strcmp("insertion", argv[1])){
-		printf("Running Insertion Sort Algorithm......\n");
+		printf("\nRunning Insertion Sort Algorithm......\n");
 		insertionSort(arr, tam_array); //Run InsertionSort method.
 	}
 
+	//If the argument is merge, run mergeSort method.
 	else if(!strcmp("merge", argv[1])){
-		printf("Running Merge Sort Algorithm......\n");
+		printf("\nRunning Merge Sort Algorithm......\n");
 		mergeSort(arr, 0, tam_array-1);
 	}
-
+	
+	//If the argument is quick, run quickSort method.
 	else if(!strcmp("quick", argv[1])){
+		printf("\nRunning Quick Sort Algorithm......\n");
 		quickSort(arr, 0, tam_array-1);
 	}
 
+	//If the argument is heap, run heapSort method.
 	else if(!strcmp("heap", argv[1])){
+		printf("\nRunning Heap Sort Algorithm......\n");
 		heapSort(arr, tam_array);
 	}
 
@@ -72,5 +79,6 @@ int main(int argc, char *argv[]){
 		exit(1);
 	}
 
+	printf("\nArray after sorting...\n");
 	printArray(arr, tam_array); //Print array after sorting.
 }

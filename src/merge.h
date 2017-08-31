@@ -60,7 +60,11 @@ void merge(int* arr, int comeco, int meio, int fim){
 
 void mergeSort(int* arr, int comeco, int fim){
 	if(comeco<fim){
-		printf("Comeco: %d, Fim: %d\n", comeco, fim);
+
+		if(PRINT_FLAG){
+			printf("Comeco: %d, Fim: %d\n", comeco, fim);
+		}
+
 		int meio = (comeco+fim)/2; 
 		mergeSort(arr, comeco, meio);
 		mergeSort(arr, meio+1, fim);

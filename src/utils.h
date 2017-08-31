@@ -31,6 +31,8 @@ SOFTWARE.
 #include <stdlib.h>
 #include <string.h>
 
+#define PRINT_FLAG 0
+
 //Function to print the list.
 void printArray(int* arr, int tam){
 	int i;

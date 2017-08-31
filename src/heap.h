@@ -31,9 +31,9 @@ void maxHeapify(int* arr, int pos, int tam){
 	int right = 2*pos+2;
 	int maior = pos;
 
-	//if(PRINT_FLAG){
+	if(PRINT_FLAG){
 		printArray(arr, tam);
-	//}
+	}
 	
 	if(left<=tam-1 && arr[left]>arr[pos]){
 		maior = left;
@@ -66,12 +66,11 @@ void heapSort(int* arr, int tam){
 		arr[i] = arr[0];
 		arr[0] = aux;
 
-		//if(PRINT_FLAG){
+		if(PRINT_FLAG){
 			printf("\nMaxHeapify\n");
-		//}
+		}
 
 		maxHeapify(arr, 0, tamanho_array);
 		tamanho_array--;
-		//buildMaxHeap(arr, tamanho_array);
 	}
 }
