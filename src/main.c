@@ -63,7 +63,7 @@ int main(int argc, char *argv[]){
 	}
 
 	else if(!strcmp("heap", argv[1])){
-		buildMaxHeap(arr, tam_array);
+		heapSort(arr, tam_array);
 	}
 
 	//If not, a wrong argument was typed.

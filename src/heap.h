@@ -52,3 +52,16 @@ void buildMaxHeap(int* arr, int tam){
 		maxHeapify(arr, i, tam);
 	}
 }
+
+void heapSort(int* arr, int tam){
+	int tamanho_array = tam-1;
+	buildMaxHeap(arr, tam-1);
+
+	for(int i = tam-1; i>=0; i--){
+		int aux = arr[i];
+		arr[i] = arr[0];
+		arr[0] = aux;
+		tamanho_array--;
+		buildMaxHeap(arr, tamanho_array);
+	}
+}
