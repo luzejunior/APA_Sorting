@@ -14,3 +14,6 @@ merge:
 
 quick:
 	./program quick
+
+heap:
+	./program heap

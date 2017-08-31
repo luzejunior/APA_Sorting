@@ -29,51 +29,30 @@ SOFTWARE.
 
 */
 
-#include "utils.h"
-#include "selection.h"
-#include "insertion.h"
-#include "merge.h"
-#include "quick.h"
-#include "heap.h"
+void maxHeapify(int* arr, int pos, int tam){
+	int left = 2*pos+1;
+	int right = 2*pos+2;
+	int maior = pos;
 
-//Main function
-int main(int argc, char *argv[]){
-
-	int tam_array = 10; //Array size definition.
-	int arr[10] = {2,5,8,6,9,3,1,4,0,7}; //Array definition.
-
-	printArray(arr, tam_array); //Print array before sorting.
-
-	//If the argument is selection, run selectionSort method.
-	if(!strcmp("selection", argv[1])){
-		printf("Running Selection Sort Algorithm......\n");
-		selectionSort(arr, tam_array); //Run SelectionSort method.
+	if(left<=tam && arr[left]>arr[pos]){
+		maior = left;
 	}
 
-	//If the argument is insertion, run insertionSort method.
-	else if(!strcmp("insertion", argv[1])){
-		printf("Running Insertion Sort Algorithm......\n");
-		insertionSort(arr, tam_array); //Run InsertionSort method.
+	if(right<=tam && arr[right]>arr[maior]){
+		maior = right;
 	}
 
-	else if(!strcmp("merge", argv[1])){
-		printf("Running Merge Sort Algorithm......\n");
-		mergeSort(arr, 0, tam_array-1);
+	if(maior != pos){
+		int aux = arr[pos];
+		arr[pos] = arr[maior];
+		arr[maior] = aux;
+		maxHeapify(arr, maior, tam);
 	}
+}
 
-	else if(!strcmp("quick", argv[1])){
-		quickSort(arr, 0, tam_array-1);
+void buildMaxHeap(int* arr, int tam){
+
+	for(int i = (tam-1)/2; i>=0; i--){
+		maxHeapify(arr, i, tam);
 	}
-
-	else if(!strcmp("heap", argv[1])){
-		buildMaxHeap(arr, tam_array);
-	}
-
-	//If not, a wrong argument was typed.
-	else{
-		printf("Invalid argument\n");
-		exit(1);
-	}
-
-	printArray(arr, tam_array); //Print array after sorting.
 }
