@@ -5,6 +5,10 @@ Here you can find simples sorting algorithms implementations using C language.
 #### Version 1.0.0
  - Insertion Sort
  - Selection Sort
+#### Version 1.1.0
+ - Merge Sort
+ - Quick Sort
+ - Heap Sort
 
 ## Requirements:
 
@@ -32,4 +36,22 @@ If you want to use the Insertion Sort algorithm:
 If you want to use the Selection Sort algorithm:
 ```sh
 	$ make selection
+```
+
+#### Merge Sort Algorithm
+If you want to use the Merge Sort algorithm:
+```sh
+	$ make merge
+```
+
+#### Quick Sort Algorithm
+If you want to use the Quick Sort algorithm:
+```sh
+	$ make quick
+```
+
+#### Heap Sort Algorithm
+If you want to use the Heap Sort algorithm:
+```sh
+	$ make heap
 ```
