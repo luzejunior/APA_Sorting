@@ -26,12 +26,14 @@ SOFTWARE.
 
 */
 
+//Merge method to merge the divided arrays.
 void merge(int* arr, int comeco, int meio, int fim){
-	int aux[fim-comeco+1];
-	int apontador1 = comeco;
-	int apontador2 = meio+1;
-	int apontadorAux = 0;
+	int aux[fim-comeco+1]; //Auxiliary array.
+	int apontador1 = comeco; //Array 1 pointer.
+	int apontador2 = meio+1; //Array 2 pointer.
+	int apontadorAux = 0; //Auxiliaty array pointer
 
+	//Main algorithm commands:
 	while(apontador1 <= meio && apontador2 <= fim){
 		if(arr[apontador2] < arr[apontador1]){
 			aux[apontadorAux] = arr[apontador2];
@@ -44,6 +46,7 @@ void merge(int* arr, int comeco, int meio, int fim){
 		apontadorAux++;
 	}
 
+	//If there is any remainig numbers on arrays, copy to auxiliaxy array.
 	while(apontador1<=meio){
 		aux[apontadorAux++] = arr[apontador1++];
 	}
@@ -52,22 +55,26 @@ void merge(int* arr, int comeco, int meio, int fim){
 		aux[apontadorAux++] = arr[apontador2++];
 	}
 
+	//Transfer sorted auxiliary array to main array.
 	for(apontadorAux = comeco; apontadorAux<=fim; apontadorAux++){
 		arr[apontadorAux] = aux[apontadorAux-comeco];
 	}
 
 }
 
+//Merge Sort algorithm method
 void mergeSort(int* arr, int comeco, int fim){
+	//Compare Start with end to see if array can be divided.
 	if(comeco<fim){
 
+		//Print or not informations: YOU CAN CHANGE THIS FLAG ON "utils.h" FILE.
 		if(PRINT_FLAG){
 			printf("Comeco: %d, Fim: %d\n", comeco, fim);
 		}
 
-		int meio = (comeco+fim)/2; 
-		mergeSort(arr, comeco, meio);
-		mergeSort(arr, meio+1, fim);
-		merge(arr, comeco, meio, fim);
+		int meio = (comeco+fim)/2; //Calculate middle of array.
+		mergeSort(arr, comeco, meio); //Recursively call mergeSort method to the first array half.
+		mergeSort(arr, meio+1, fim); //Recursively call mergeSort method to the second array half.
+		merge(arr, comeco, meio, fim); //Call merge to merge arrays.
 	}
 }
