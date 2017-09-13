@@ -28,15 +28,14 @@ SOFTWARE.
 
 //Insertion Sort algorithm method
 void insertionSort(int* arr, int tam){
-	int aux1, aux2, i, j; //Auxiliary variables.
+	int aux, i, j; //Auxiliary variables.
 	int indice; //Variable to store the smaller number array index.
 	int found = 0; //Flag to indicate if a smaller number was found.
 
 	//For each position on array...
 	for(i=0; i<tam-1; i++){
 		//Variables initialization:
-		aux1 = arr[i];
-		aux2 = arr[i+1];
+		aux = arr[i+1];
 		indice = i;
 		found = 0;
 
@@ -44,7 +43,7 @@ void insertionSort(int* arr, int tam){
 		for(j=i+1; j>0; j--){
 
 			//While a small number is found...
-			while(aux2 < arr[j-1]){
+			while(aux < arr[j-1]){
 				arr[j] = arr[j-1]; //Change position.
 				indice = j-1; //Update the array index.
 				found = 1; //Set flag.
@@ -54,7 +53,7 @@ void insertionSort(int* arr, int tam){
 
 		//If a smaller number was found:
 		if(found){
-			arr[indice] = aux2; //Update his position on array.
+			arr[indice] = aux; //Update his position on array.
 		}
 	}
 }
