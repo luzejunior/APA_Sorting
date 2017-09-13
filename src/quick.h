@@ -26,7 +26,7 @@ SOFTWARE.
 
 */
 
-int quickSort(int* arr, int comeco, int fim){
+void quickSort(int* arr, int comeco, int fim){
 	int i = comeco;
 	int j = fim;
 	int pivo = arr[comeco];
