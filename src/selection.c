@@ -26,6 +26,8 @@ SOFTWARE.
 
 */
 
+#include "utils.h"
+
 //Selection Sort algorithm method
 void selectionSort(int* arr, int tam){
 	int aux1, aux2, i, j; //Auxiliary variables.

@@ -27,11 +27,6 @@ SOFTWARE.
 */
 
 #include "utils.h"
-#include "selection.h"
-#include "insertion.h"
-#include "merge.h"
-#include "quick.h"
-#include "heap.h"
 
 //Main function
 int main(int argc, char *argv[]){

@@ -1,45 +1,27 @@
-/*
-
-Author: Luzenildo de Sousa Batista Junior
-E-Mail: luzejunior94@gmail.com
-
-License:
-
-MIT License
-
-Copyright (c) 2017 Luzenildo de Sousa Batista Junior
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-*/
-
-//Util includes.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #define PRINT_FLAG 0
 
-//Function to print the list.
-void printArray(int* arr, int tam){
-	int i;
+//Insertion Sort
+void insertionSort(int* arr, int tam);
 
-	for(i=0; i<tam; i++){
-		printf("[%d]", arr[i]);
-	}
+//Selection Sort
+void selectionSort(int* arr, int tam);
 
-	printf("\n");
-}
+//Quick Sort
+void quickSort(int* arr, int comeco, int fim);
+
+//Merge Sort
+void merge(int* arr, int comeco, int meio, int fim);
+void mergeSort(int* arr, int comeco, int fim);
+
+
+//Heap Sort
+void maxHeapify(int* arr, int pos, int tam);
+void buildMaxHeap(int* arr, int tam);
+void heapSort(int* arr, int tam);
+
+//Util Class
+void printArray(int* arr, int tam);

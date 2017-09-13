@@ -26,6 +26,8 @@ SOFTWARE.
 
 */
 
+#include "utils.h"
+
 void maxHeapify(int* arr, int pos, int tam){
 	int left = 2*pos+1;
 	int right = 2*pos+2;

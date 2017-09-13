@@ -26,6 +26,8 @@ SOFTWARE.
 
 */
 
+#include "utils.h"
+
 void quickSort(int* arr, int comeco, int fim){
 	int i = comeco;
 	int j = fim;

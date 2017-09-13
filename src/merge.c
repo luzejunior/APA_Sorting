@@ -26,6 +26,8 @@ SOFTWARE.
 
 */
 
+#include "utils.h"
+
 //Merge method to merge the divided arrays.
 void merge(int* arr, int comeco, int meio, int fim){
 	int aux[fim-comeco+1]; //Auxiliary array.
