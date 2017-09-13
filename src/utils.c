@@ -38,3 +38,17 @@ void printArray(int* arr, int tam){
 
 	printf("\n");
 }
+
+//Function to get the Higher number in an array.
+int getHigherNumber(int arr[], int tam){
+	int i;
+	int higherNbr = 0;
+
+	for(i=0; i<tam; i++){
+		if(arr[i] > higherNbr){
+			higherNbr = arr[i];
+		}
+	}
+
+	return higherNbr;
+}
