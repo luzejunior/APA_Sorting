@@ -1,7 +1,10 @@
 CC = gcc
+FLAGS = -Wall -Werror
 
-all:
-	$(CC) src/main.c -o program
+.PHONY: selection insertion merge quick heap
+
+program: src/main.c src/*.h
+	$(CC) $(FLAGS) src/main.c -o program
 
 selection:
 	./program selection
