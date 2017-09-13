@@ -34,6 +34,8 @@ int main(int argc, char *argv[]){
 	int tam_array = 10; //Array size definition.
 	int arr[10] = {2,5,8,6,9,3,1,4,0,7}; //Array definition.
 
+	int arr2[8] = {2,5,3,0,2,3,0,3};
+
 	printf("Array before sorting...\n");
 	printArray(arr, tam_array); //Print array before sorting.
 	
@@ -66,6 +68,14 @@ int main(int argc, char *argv[]){
 	else if(!strcmp("heap", argv[1])){
 		printf("\nRunning Heap Sort Algorithm......\n");
 		heapSort(arr, tam_array);
+	}
+
+	else if(!strcmp("counting", argv[1])){
+		printf("\nRunning Counting Sort Algorithm......\n");
+		int maiorNumero = getHigherNumber(arr2, 8);
+		printf("O maior numero é: %d\n", maiorNumero);
+		countingSort(arr2, 8, maiorNumero);
+		printArray(arr2, 8);
 	}
 
 	//If not, a wrong argument was typed.

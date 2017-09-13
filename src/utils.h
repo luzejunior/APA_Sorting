@@ -23,6 +23,9 @@ void maxHeapify(int* arr, int pos, int tam);
 void buildMaxHeap(int* arr, int tam);
 void heapSort(int* arr, int tam);
 
+//Counting Sort
+void countingSort(int* arr, int tam, int higherNumber);
+
 //Util File
 void printArray(int* arr, int tam);
 int getHigherNumber(int arr[], int tam);

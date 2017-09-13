@@ -1,9 +1,9 @@
 CC = gcc
 FLAGS = -Wall -Werror
 
-.PHONY: selection insertion merge quick heap
+.PHONY: selection insertion merge quick heap counting
 
-program: src/main.c src/*.h
+program: src/*.c src/*.h
 	$(CC) $(FLAGS) src/*.c -o program
 
 selection:
@@ -20,3 +20,6 @@ quick:
 
 heap:
 	./program heap
+
+counting:
+	./program counting
