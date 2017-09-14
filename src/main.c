@@ -31,14 +31,10 @@ SOFTWARE.
 //Main function
 int main(int argc, char *argv[]){
 
-	int tam_array = 10; //Array size definition.
-	int arr[10] = {2,5,8,6,9,3,1,4,0,7}; //Array definition.
+	int tam_array; //Array size definition.
+	int *arr = NULL;
 
-	int arr2[8] = {2,5,3,0,2,3,0,3};
-
-	printf("Array before sorting...\n");
-	printArray(arr, tam_array); //Print array before sorting.
-	
+	tam_array = createArrayFromFile("text.txt", &arr);	
 
 	//If the argument is selection, run selectionSort method.
 	if(!strcmp("selection", argv[1])){
@@ -72,10 +68,14 @@ int main(int argc, char *argv[]){
 
 	else if(!strcmp("counting", argv[1])){
 		printf("\nRunning Counting Sort Algorithm......\n");
-		int maiorNumero = getHigherNumber(arr2, 8);
+		int maiorNumero = getHigherNumber(arr, tam_array);
 		printf("O maior numero é: %d\n", maiorNumero);
-		countingSort(arr2, 8, maiorNumero);
-		printArray(arr2, 8);
+		countingSort(arr, tam_array, maiorNumero);
+	}
+
+	else if(!strcmp("radix", argv[1])){
+		printf("\nRunning Radix Sort Algorithm......\n");
+		radixSort(arr, tam_array);
 	}
 
 	//If not, a wrong argument was typed.

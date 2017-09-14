@@ -52,3 +52,50 @@ int getHigherNumber(int arr[], int tam){
 
 	return higherNbr;
 }
+
+int createArrayFromFile(char *filename, int** arr){
+	int i = 0;
+
+	FILE *file = fopen(filename, "r");
+	if(NULL == file)
+    {
+        printf("Unable to open file\n");
+        exit(-1);
+    }
+   	
+	int numberOfElements = readNumberOfLines(file);
+	printf("number of elements: %d \n", numberOfElements);
+
+	fseek(file, 0, SEEK_SET);
+
+	int* arr2 = (int*) calloc(numberOfElements, sizeof(int));
+
+	if (file != NULL) {
+        while (!feof(file)) {
+        	fscanf(file, "%d", &arr2[i]);
+        	i++;
+        }
+    } else {
+        printf("Unable to open file");
+        return -1;
+    }
+
+    *arr = arr2;
+    fclose(file);
+    return i;
+}
+
+int readNumberOfLines(FILE *file){
+	int lines = 0;
+	int ch = 0;
+
+	while(!feof(file)){
+	  ch = fgetc(file);
+
+	  if(ch == '\n'){
+	    lines++;
+	  }
+	}
+
+	return lines;
+}

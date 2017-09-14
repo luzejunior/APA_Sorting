@@ -5,27 +5,32 @@
 #define PRINT_FLAG 0
 
 //Insertion Sort
-void insertionSort(int* arr, int tam);
+void insertionSort(int*, int);
 
 //Selection Sort
-void selectionSort(int* arr, int tam);
+void selectionSort(int*, int);
 
 //Quick Sort
-void quickSort(int* arr, int comeco, int fim);
+void quickSort(int*, int, int);
 
 //Merge Sort
-void merge(int* arr, int comeco, int meio, int fim);
-void mergeSort(int* arr, int comeco, int fim);
+void merge(int*, int, int, int);
+void mergeSort(int*, int, int);
 
 
 //Heap Sort
-void maxHeapify(int* arr, int pos, int tam);
-void buildMaxHeap(int* arr, int tam);
-void heapSort(int* arr, int tam);
+void maxHeapify(int*, int, int);
+void buildMaxHeap(int*, int);
+void heapSort(int*, int);
 
 //Counting Sort
-void countingSort(int* arr, int tam, int higherNumber);
+void countingSort(int*, int, int);
+
+//Radix Sort
+void radixSort(int*, int);
 
 //Util File
-void printArray(int* arr, int tam);
-int getHigherNumber(int arr[], int tam);
+void printArray(int*, int);
+int getHigherNumber(int[], int);
+int createArrayFromFile(char*, int**);
+int readNumberOfLines(FILE*);
