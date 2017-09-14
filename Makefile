@@ -1,7 +1,7 @@
 CC = gcc
 FLAGS = -Wall -Werror
 
-.PHONY: selection insertion merge quick heap counting
+.PHONY: selection insertion merge quick heap counting radix
 
 program: src/*.c src/*.h
 	$(CC) $(FLAGS) src/*.c -o program
@@ -23,3 +23,6 @@ heap:
 
 counting:
 	./program counting
+
+radix:
+	./program radix
