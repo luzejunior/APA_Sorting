@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
 	int tam_array; //Array size definition.
 	int *arr = NULL;
 
-	tam_array = createArrayFromFile("text.txt", &arr);	
+	tam_array = createArrayFromFile("samples/num.100000.1.in", &arr);	
 
 	//If the argument is selection, run selectionSort method.
 	if(!strcmp("selection", argv[1])){
@@ -85,5 +85,5 @@ int main(int argc, char *argv[]){
 	}
 
 	printf("\nArray after sorting...\n");
-	printArray(arr, tam_array); //Print array after sorting.
+	//printArray(arr, tam_array); //Print array after sorting.
 }
