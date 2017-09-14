@@ -60,22 +60,21 @@ int createArrayFromFile(char *filename, int** arr){
 	if(NULL == file)
     {
         printf("Unable to open file\n");
-        exit(-1);
+        return -1;
     }
    	
 	int numberOfElements = readNumberOfLines(file);
-	printf("number of elements: %d \n", numberOfElements);
 
 	fseek(file, 0, SEEK_SET);
 
 	int* arr2 = (int*) calloc(numberOfElements, sizeof(int));
 
-	if (file != NULL) {
-        while (!feof(file)) {
+	if(file != NULL){
+        while (!feof(file)){
         	fscanf(file, "%d", &arr2[i]);
         	i++;
         }
-    } else {
+    }else{
         printf("Unable to open file");
         return -1;
     }
@@ -90,11 +89,11 @@ int readNumberOfLines(FILE *file){
 	int ch = 0;
 
 	while(!feof(file)){
-	  ch = fgetc(file);
+		ch = fgetc(file);
 
-	  if(ch == '\n'){
-	    lines++;
-	  }
+		if(ch == '\n'){
+			lines++;
+		}
 	}
 
 	return lines;

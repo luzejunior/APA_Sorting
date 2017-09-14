@@ -42,19 +42,19 @@ void radixSort(int* arr, int tam){
 		for(i=0; i<tam; i++)
 			c[(arr[i]/divider) % 10]++;
 
-		printArray(c, 10);
+		//printArray(c, 10);
 
 		for(i=1; i<10; i++)
 			c[i] += c[i-1];
 
-		printArray(c, 10);
+		//printArray(c, 10);
 
 		for(i=tam-1; i>=0; i--){
 			b[c[((arr[i]/divider) % 10)]-1] = arr[i];
 			c[(arr[i]/divider) % 10]--;
 		}
 
-		printArray(b, tam);
+		//printArray(b, tam);
 
 		for(i=0; i<tam; i++)
 			arr[i] = b[i];
