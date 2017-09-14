@@ -33,30 +33,26 @@ void countingSort(int* arr, int tam, int higherNumber){
 	int c[higherNumber+1];
 	int b[tam];
 
-	for(i=0; i<higherNumber+1; i++){
+	for(i=0; i<higherNumber+1; i++)
 		c[i] = 0;
-	}
 
-	for(i=0; i<tam; i++){
+	for(i=0; i<tam; i++)
 		c[arr[i]]++;
-	}
 
-	printArray(c, higherNumber+1);
+	//printArray(c, higherNumber+1);
 
-	for(i=1; i<higherNumber+1; i++){
-		c[i] = c[i] + c[i-1];
-	}
+	for(i=1; i<higherNumber+1; i++)
+		c[i] += c[i-1];
 
-	printArray(c, higherNumber+1);
+	//printArray(c, higherNumber+1);
 
 	for(i=tam-1; i>=0; i--){
 		b[(c[arr[i]])-1] = arr[i];
 		c[arr[i]]--;
 	}
 
-	printArray(c, higherNumber+1);
+	//printArray(c, higherNumber+1);
 
-	for(i=0; i<tam; i++){
+	for(i=0; i<tam; i++)
 		arr[i] = b[i];
-	}
 }
