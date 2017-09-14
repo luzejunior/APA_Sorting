@@ -9,6 +9,9 @@ Here you can find simple sorting algorithms implementations using C language.
  - Merge Sort
  - Quick Sort
  - Heap Sort
+ #### Version 1.2.0
+ - Counting Sort
+ - Radix Sort
 
 ## Requirements:
 
@@ -55,3 +58,18 @@ If you want to use the Heap Sort algorithm:
 ```sh
 	$ make heap
 ```
+
+#### Counting Sort Algorithm
+If you want to use the Counting Sort algorithm:
+```sh
+	$ make counting
+```
+
+#### Radix Sort Algorithm
+If you want to use the Radix Sort algorithm:
+```sh
+	$ make radix
+```
+PS: Use this algorithm only with "samples/text.txt".
+
+## Comparison:
