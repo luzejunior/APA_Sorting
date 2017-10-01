@@ -57,6 +57,7 @@ int createArrayFromFile(char *filename, int** arr){
 	int i = 0;
 
 	FILE *file = fopen(filename, "r");
+
 	if(NULL == file)
     {
         printf("Unable to open file\n");
